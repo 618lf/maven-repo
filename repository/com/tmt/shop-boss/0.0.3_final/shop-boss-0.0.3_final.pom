@@ -1,0 +1,88 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.tmt</groupId>
+		<artifactId>shop-parent</artifactId>
+        <version>0.0.3_final</version>
+		<relativePath>../shop-parent/</relativePath>
+	</parent>
+	<artifactId>shop-boss</artifactId>
+	<packaging>war</packaging>
+	<dependencies>
+	    
+	    <!-- 后台 -->
+	    <dependency>
+			<groupId>com.tmt</groupId>
+			<artifactId>shop-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.tmt</groupId>
+			<artifactId>shop-system-boss</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.tmt</groupId>
+			<artifactId>shop-wechat-boss</artifactId>
+		</dependency>
+		
+		<!-- 服务 -->
+		<dependency>
+			<groupId>com.tmt</groupId>
+			<artifactId>shop-system-service</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.tmt</groupId>
+			<artifactId>shop-timer-service</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.tmt</groupId>
+			<artifactId>shop-wechat-service</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.tmt</groupId>
+			<artifactId>shop-wechat-searcher</artifactId>
+		</dependency>
+		
+		<!-- 开发 -->
+		<dependency>
+			<groupId>com.tmt</groupId>
+			<artifactId>shop-gen</artifactId>
+		</dependency>
+		
+		<!-- 编译 -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<outputDirectory>${project.basedir}/src/main/webapp/WEB-INF/classes/</outputDirectory>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<webappDirectory>${basedir}/src/main/webapp</webappDirectory>
+					<warSourceDirectory>${basedir}/src/main/webapp</warSourceDirectory>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

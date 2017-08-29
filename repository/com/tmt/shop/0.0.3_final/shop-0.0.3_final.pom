@@ -1,0 +1,89 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.tmt</groupId>
+	<artifactId>shop</artifactId>
+	<version>0.0.3_final</version>
+	<packaging>pom</packaging>
+	<description> Base Framework 1.0 </description>
+
+	<organization>
+		<name>lifeng</name>
+		<url>http://www.tmt.org.cn</url>
+	</organization>
+
+	<developers>
+		<developer>
+			<id>lifeng</id>
+			<name>li feng</name>
+			<email>618lf at 163.com</email>
+			<organization>tmt</organization>
+			<roles>
+				<role>Project leader</role>
+			</roles>
+			<timezone>+8</timezone>
+		</developer>
+	</developers>
+
+	<modules>
+	    <module>shop-parent</module>
+		<module>shop-common</module>
+		<module>shop-common-web</module>
+		<module>shop-config</module>
+		<module>shop-staticize</module>
+		<module>shop-gen</module>
+		<module>shop-searcher</module>
+		<module>shop-searcher-ansj</module>
+		<module>shop-searcher-ik</module>
+		<module>shop-system-facade</module>
+		<module>shop-system-service</module>
+		<module>shop-system-boss</module>
+		<module>shop-system-portal</module>
+		<module>shop-timer-facade</module>
+		<module>shop-timer-service</module>
+		<module>shop-wechat-facade</module>
+		<module>shop-wechat-service</module>
+		<module>shop-wechat-boss</module>
+		<module>shop-wechat-portal</module>
+		<module>shop-wechat-searcher</module>
+		<module>shop-wechat-sdk</module>
+		<module>shop-script</module>
+		<module>shop-boss</module>
+		<module>shop-test</module>
+	</modules>
+
+	<!-- 设置团队持续集成服务器 -->
+	<distributionManagement>
+		<repository>
+			<id>nexus-releases</id>
+			<name>Team Nesus Release Repository</name>
+			<url>http://192.168.0.222:7001/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<name>Team Nesus Snapshot Repository</name>
+			<url>http://192.168.0.222:7001/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<scm>
+		<connection>scm:git:https://git.oschina.net/618lf/shop.git</connection>
+		<developerConnection>scm:git:https://git.oschina.net/618lf/shop.git</developerConnection>
+		<url>scm:git:https://git.oschina.net/618lf/shop</url>
+	  <tag>HEAD</tag>
+  </scm>
+
+	<build>
+		<defaultGoal>install</defaultGoal>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.2</version>
+				<configuration>
+				  <useReleaseProfile>false</useReleaseProfile>
+				  <autoVersionSubmodules>true</autoVersionSubmodules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
