@@ -19,6 +19,10 @@
 		</dependency>
 		<dependency>
 			<groupId>com.tmt</groupId>
+			<artifactId>shop-common-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.tmt</groupId>
 			<artifactId>shop-wechat-sdk</artifactId>
 		</dependency>
 		<dependency>

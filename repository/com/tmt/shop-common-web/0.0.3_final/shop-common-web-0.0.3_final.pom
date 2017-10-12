@@ -30,10 +30,6 @@
 			<groupId>commons-fileupload</groupId>
 			<artifactId>commons-fileupload</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>io.jsonwebtoken</groupId>
-			<artifactId>jjwt</artifactId>
-		</dependency>
 		
 		<dependency>
 			<groupId>javax.servlet</groupId>
